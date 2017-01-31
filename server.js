@@ -6,7 +6,7 @@ const upload = multer(); //From Multer Doc: In case you omit the options object,
 
 app.use("/", express.static("./public"));
 
-app.post("/upload", upload.single("upfile"), (req,res,next) => {
+app.post("/api/fileanalyse", upload.single("upfile"), (req,res,next) => {
     res.status(200).send({
         name: req.file.originalname,
         type: req.file.mimetype,
